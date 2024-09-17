@@ -1,0 +1,22 @@
+defaults:
+  # Setting default for preprocessed data
+  - setups@_here_: plot
+  - plotting@what_to_plot: soft_robot_plots
+  - plotting@_here_: rcparams
+  - _self_
+
+what_to_plot:
+  regressors:
+  - EDMD
+  - EDMD-AS
+  - FBEDMD
+  - FBEDMD-AS
+  - TEDMD
+  - TEDMD-AS
+
+hydra:
+  run:
+    dir: ./build/outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ./build/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}

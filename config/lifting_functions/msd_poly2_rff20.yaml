@@ -1,0 +1,16 @@
+lifting_functions: 
+  -
+    - sp
+    - _target_: pykoop.SplitPipeline
+      lifting_functions_state:
+        # -
+        #   - pl
+        #   - _target_: pykoop.PolynomialLiftingFn
+        #     order: 2
+        -
+          - rff
+          - _target_: pykoop.KernelApproxLiftingFn
+            kernel_approx:
+              _target_: pykoop.RandomFourierKernelApprox
+              n_components: 20
+              random_state: 1

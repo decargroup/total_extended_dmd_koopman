@@ -1,0 +1,17 @@
+defaults:
+  - setups@_here_: kp_pipeline
+  - regressors@pykoop_pipeline: TEDMD-AS
+  - lifting_functions@pykoop_pipeline: soft_robot_poly2_centers10 # soft_robot_poly2_centers10
+  - _self_
+
+robot: soft_robot
+variance: 0.1
+delay: 0
+pred: true
+
+hydra:
+  run:
+    dir: ./build/outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ./build/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}

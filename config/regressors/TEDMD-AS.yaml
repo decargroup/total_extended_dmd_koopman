@@ -1,0 +1,4 @@
+regressor:
+  _target_: utilities.TedmdAS
+  new_eps: -1
+  spectral_radius: 0.99999

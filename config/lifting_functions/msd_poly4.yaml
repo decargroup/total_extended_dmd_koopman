@@ -1,0 +1,9 @@
+lifting_functions: 
+  -
+    - sp
+    - _target_: pykoop.SplitPipeline
+      lifting_functions_state:
+        -
+          - pl
+          - _target_: pykoop.PolynomialLiftingFn
+            order: 4
